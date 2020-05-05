@@ -1,0 +1,24 @@
+<!--pages/list/list.wxml-->
+<import src="/pages/template/template.wxml" />
+<view>
+  <swiper indicator-dots="true" autoplay="true">
+    <swiper-item>
+      <image src="/images/detail/carousel/01.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/detail/carousel/02.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/detail/carousel/03.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/detail/carousel/04.jpg"></image>
+    </swiper-item>
+  </swiper>
+
+  <block wx:for="{{datas}}" wx:key="index">
+    <view catchtap="toDetail" data-id="{{ index }}">
+      <template is="weekly" data="{{...item}}"/>
+    </view>
+  </block>
+</view>
